@@ -40,6 +40,12 @@ const NavBar = () => {
               <li>
                 <NavLink to="/users">Users</NavLink>
               </li>
+              <li>
+                <NavLink to="/users2">Users-2</NavLink>
+              </li>
+              <li>
+                <NavLink to="/posts">Posts</NavLink>
+              </li>
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">daisyUI</a>
@@ -60,6 +66,9 @@ const NavBar = () => {
             </li>
             <li>
               <NavLink to="/users2">Users-2</NavLink>
+            </li>
+            <li>
+              <NavLink to="/posts">Posts</NavLink>
             </li>
           </ul>
         </div>
