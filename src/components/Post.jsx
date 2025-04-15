@@ -15,7 +15,7 @@ const Post = ({ post }) => {
       </Link> <br/>
       <button onClick={handleNavigate} className="btn">
         show details of -{post.id}
-      </button>
+      </button> 
     </div>
   );
 };

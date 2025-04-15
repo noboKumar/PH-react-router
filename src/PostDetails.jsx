@@ -1,8 +1,9 @@
 import React from "react";
-import { useLoaderData } from "react-router";
+import { useLoaderData, useNavigate } from "react-router";
 
 const PostDetails = () => {
   const { title, body } = useLoaderData();
+  const navigate = useNavigate();
   return (
     <div className="space-y-5">
       <h1 className="text-2xl font-bold">Post details :</h1>
@@ -11,6 +12,9 @@ const PostDetails = () => {
           <span className="underline">Title:</span> {title}.
         </h1>
         <p className="text-xl">{body}</p>
+        <button onClick={() => navigate(-1)} className="btn">
+          Back
+        </button>
       </div>
     </div>
   );
