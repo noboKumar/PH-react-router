@@ -1,12 +1,19 @@
 import React, { Suspense, useState } from "react";
-import { Link } from "react-router";
+import { Link, Navigate } from "react-router";
 import UserInfo from "./UserInfo";
 
 const User = ({ user }) => {
   const [info, setInfo] = useState(false);
+  const [visitHome, setVisitHome] = useState(false);
+
   const userInfoPromise = fetch(
     `https://jsonplaceholder.typicode.com/users/${user.id}`
   ).then((res) => res.json());
+
+  
+  if (visitHome) {
+    return <Navigate to="/"></Navigate>;
+  }
 
   return (
     <div className="border-2 rounded-xl p-8 space-y-2">
@@ -23,6 +30,7 @@ const User = ({ user }) => {
           <UserInfo userInfoPromise={userInfoPromise}></UserInfo>
         </Suspense>
       )}
+      <button onClick={() => setVisitHome(true)}>Visit Home</button>
     </div>
   );
 };
